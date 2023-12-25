@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Cookie";
+}
+
+<h2>Cookie</h2>
+
+<form action="/Cookies/SetCookies" method="post">
+    @if (ViewBag.CookieValue != null)
+    {
+        <p>Cookie: @ViewBag.CookieValue</p>
+    }
+    else
+    {
+        <p>Cookies not found</p>
+    }
+
+    <label for="value">Значение:</label>
+    <input type="text" id="value" name="value" value=""><br><br>
+
+    <label for="expiration">Дата/Время :</label>
+    <input type="datetime-local" id="expiration" name="expiration"><br><br>
+
+    <input type="submit" value="Отправить">
+</form>
